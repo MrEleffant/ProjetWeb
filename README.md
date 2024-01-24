@@ -3,6 +3,7 @@
 Dans le contexte des cours de développement Web, nous avons réalisé un projet centré sur l'utilisation du framework Symfony. L'objectif principal était de concevoir une interface Web destinée à simplifier le recensement des résidents d'une ville. L'utilisateur avait la possibilité d'ajouter, de modifier et de supprimer des habitants. De plus, il pouvait accéder à une liste complète des habitants, avec la capacité de les trier selon différents critères tels que l'ordre alphabétique ou les adresses.
 
 ## Menu Habitant
+Ici l'utilisateur à accés à la liste globale de tous les habitants ajoutés à la base de donnée. 
         
 
 ![img](https://media.discordapp.net/attachments/1017135217988878336/1199727124626559126/image.png?ex=65c397f4&is=65b122f4&hm=ecaa1922a910a2e404d20a4b54409599f8457d36df45419cf702e14aee1f4a13&=&format=webp&quality=lossless&width=896&height=116)
