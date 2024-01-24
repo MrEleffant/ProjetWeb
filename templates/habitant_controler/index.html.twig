@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Habitants{% endblock %}
+
+{% block body %}
+    <h1 class="text-2xl font-bold mb-4">Habitants</h1>
+
+    <table class="min-w-full bg-white border border-gray-300">
+        <thead>
+        <tr>
+            <th class="py-2 px-4 border-b text-center">Id</th>
+            <th class="py-2 px-4 border-b text-center">Nom</th>
+            <th class="py-2 px-4 border-b text-center">Prenom</th>
+            <th class="py-2 px-4 border-b text-center">Genre</th>
+            <th class="py-2 px-4 border-b text-center">Adresse</th>
+            <th class="py-2 px-4 border-b text-center">Date Naissance</th>
+            <th class="py-2 px-4 border-b text-center">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for habitant in habitants %}
+            <tr>
+                <td class="py-2 px-4 border-b text-center">{{ habitant.id }}</td>
+                <td class="py-2 px-4 border-b text-center">{{ habitant.nom }}</td>
+                <td class="py-2 px-4 border-b text-center">{{ habitant.prenom }}</td>
+                <td class="py-2 px-4 border-b text-center">{{ habitant.genre }}</td>
+                <td class="py-2 px-4 border-b text-center">{{ habitant.adresse }}</td>
+                <td class="py-2 px-4 border-b text-center">{{ habitant.dateNaissance ? habitant.dateNaissance|date('d/m/Y') : '' }}</td>
+                <td class="py-2 px-4 border-b text-center">
+                    <a href="{{ path('app_habitant_controler_show', {'id': habitant.id}) }}" class="text-blue-500 hover:underline">Voir</a>
+                    <a href="{{ path('app_habitant_controler_edit', {'id': habitant.id}) }}" class="text-green-500 hover:underline ml-2">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td class="py-2 px-4 border-b text-center" colspan="7">No records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_habitant_controler_new') }}" class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Ajouter</a>
+{% endblock %}

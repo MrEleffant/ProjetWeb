@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Habitant{% endblock %}
+
+{% block body %}
+    <h1 class="text-2xl font-bold mb-4">Habitant</h1>
+
+    <table class="min-w-full bg-white border border-gray-300">
+        <tbody>
+        <tr>
+            <th class="py-2 px-4 border-b">Id</th>
+            <td class="py-2 px-4 border-b">{{ habitant.id }}</td>
+        </tr>
+        <tr>
+            <th class="py-2 px-4 border-b">Nom</th>
+            <td class="py-2 px-4 border-b">{{ habitant.nom }}</td>
+        </tr>
+        <tr>
+            <th class="py-2 px-4 border-b">Prenom</th>
+            <td class="py-2 px-4 border-b">{{ habitant.prenom }}</td>
+        </tr>
+        <tr>
+            <th class="py-2 px-4 border-b">Genre</th>
+            <td class="py-2 px-4 border-b">{{ habitant.genre }}</td>
+        </tr>
+        <tr>
+            <th class="py-2 px-4 border-b">Adresse</th>
+            <td class="py-2 px-4 border-b">{{ habitant.adresse }}</td>
+        </tr>
+        <tr>
+            <th class="py-2 px-4 border-b">Date_naissance</th>
+            <td class="py-2 px-4 border-b">{{ habitant.dateNaissance ? habitant.dateNaissance|date('Y-m-d') : '' }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_habitant_controler_index') }}" class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Retour à la liste</a>
+
+    <a href="{{ path('app_habitant_controler_edit', {'id': habitant.id}) }}" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Modifier</a>
+
+    {{ include('habitant_controler/_delete_form.html.twig') }}
+{% endblock %}
